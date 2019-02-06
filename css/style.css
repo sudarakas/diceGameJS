@@ -30,9 +30,32 @@ body{
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
+.wrapperhelp{
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ffffff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 100px;
+}
 
-.player-1,
-.player-2{
+.helptopic{
+    font-weight: 600;
+    color: rgb(77, 106, 235);
+    margin: 15px 0 15px 0;
+}
+
+.wrapperhelp li{
+    margin-left: 55px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.player-1-box,
+.player-2-box{
     width: 50%;
     float: left;
     height: 600px;
@@ -72,7 +95,7 @@ body{
     content: "\2022";
     font-size: 47px;
     position: absolute;
-    color: rgb(77, 106, 235);;
+    color: rgb(77, 106, 235);
     top: -7px;
     right: 10px;
 }
@@ -131,9 +154,18 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px;}
-.btn-roll { top: 403px;}
-.btn-hold { top: 467px;}
+.btn-new {
+    top: 75px;
+}
+.btn-how { 
+    top: 45px;
+}
+.btn-roll {
+    top: 403px;
+}
+.btn-hold {
+    top: 467px;
+}
 
 .dice {
     position: absolute;

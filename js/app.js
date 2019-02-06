@@ -24,19 +24,34 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
         document.querySelector('#active-' + activePlayer).textContent = roundScore; 
     }
     else{
-        activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
-        roundScore = 0;
-
-        document.querySelector('#active-1').textContent = '0';
-        document.querySelector('#active-2').textContent = '0';
-
-        document.querySelector('.player-1').classList.toggle('active');
-        document.querySelector('.player-2').classList.toggle('active');
-
-        document.querySelector('.dice').style.display = 'none';
+        shiftPlayer();
     }
 });
 
-document.querySelector('btn-hold').addEventListener('click',function(){
+document.querySelector('.btn-hold').addEventListener('click', function(){
+    scores[(activePlayer-1)] += roundScore;
 
+    document.querySelector('#score-' + activePlayer).textContent = scores[(activePlayer-1)];
+
+    if(scores[(activePlayer-1)] >= 20){
+        document.querySelector('#name-'+activePlayer).textContent = 'Winner!';
+        window.alert('Player ' + activePlayer + ' won the game!');
+        location.reload();
+    }
+
+    shiftPlayer();
 });
+
+function shiftPlayer(){
+
+    activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
+    roundScore = 0;
+
+    document.getElementById('active-1').textContent = '0';
+    document.getElementById('active-2').textContent = '0';
+
+    document.querySelector('.player-1-box').classList.toggle('active');
+    document.querySelector('.player-2-box').classList.toggle('active');
+
+    document.querySelector('.dice').style.display = 'none';
+}
