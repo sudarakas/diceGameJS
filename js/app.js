@@ -44,6 +44,10 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
     shiftPlayer();
 });
 
+document.querySelector('.btn-new').addEventListener('click', function(){
+   location.reload();
+});
+
 function shiftPlayer(){
 
     activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
