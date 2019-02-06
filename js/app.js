@@ -36,7 +36,9 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
     if(scores[(activePlayer-1)] >= 100){
         document.querySelector('#name-'+activePlayer).textContent = 'Winner!';
         window.alert('Player ' + activePlayer + ' won the game!');
-        location.reload();
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-'+activePlayer+'-box').classList.add('winner');
+        document.querySelector('.player-'+activePlayer+'-box').classList.remove('active');
     }
 
     shiftPlayer();
