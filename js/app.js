@@ -33,7 +33,7 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
 
     document.querySelector('#score-' + activePlayer).textContent = scores[(activePlayer-1)];
 
-    if(scores[(activePlayer-1)] >= 20){
+    if(scores[(activePlayer-1)] >= 100){
         document.querySelector('#name-'+activePlayer).textContent = 'Winner!';
         window.alert('Player ' + activePlayer + ' won the game!');
         location.reload();
